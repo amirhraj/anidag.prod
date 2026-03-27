@@ -1,0 +1,144 @@
+
+  
+  
+  .nav{
+    font-family: "Exo_2", sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+      border-bottom-left-radius: 10px;
+    }
+    
+    
+    .nav_menu{
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      color: #000;
+     
+      
+    }
+    
+    .li{
+      display: flex;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      transition: filter 0.3s ease; /* Плавный переход */
+      cursor: pointer;
+      color: var(--text);
+      text-decoration: none;
+    }
+    
+    .link{
+      align-items: center;
+      color: inherit;
+      /* font-weight: 600; */
+      text-decoration: none;
+      
+    }
+    
+    .li:hover{
+    filter: brightness(0.9);
+    background-color: var(--li-nav-toogle);
+    
+    }
+    
+    .li.isActive{
+      background: linear-gradient(to right, #FF30AC, #C882FF);
+      color: #fff;
+    }
+    
+    
+    .li:first-child {
+    
+      border-bottom-left-radius: 15px; 
+    }
+    .li:last-child {
+    
+      border-bottom-right-radius: 15px; 
+    }
+    
+  
+    @media (max-width: 460px) {
+    
+  
+      .nav{
+        
+        font-family: "Exo 2", sans-serif;
+        font-size: 19px;
+       
+       
+  
+        }
+    
+        .nav_menu{
+         
+          display: flex;
+          width: 360px;
+          height: auto;
+          justify-content: center;
+          flex-direction: column;
+          list-style-type: none;
+          /* position: absolute; */
+           display: none; 
+          right: -100%;
+          
+          margin: 0;
+          padding: 0;
+          color: #000;
+          transition: right 1s;
+          z-index: 20;
+          background-color: #fff;
+          box-shadow: 0 0 50px rgba(0,0,0,0.1);
+          
+        }
+        .active .nav_menu {
+          right: 0;
+           display: block; 
+        }
+  
+        .li{
+          display: flex;
+          width: 100%;
+          height: 50px;
+          align-items: center;
+          justify-content: center;
+          transition: filter 0.3s ease; /* Плавный переход */
+          cursor: pointer;
+          color: #000;
+          text-decoration: none;
+          border-bottom-left-radius: 15px; 
+          border-bottom-right-radius: 15px; 
+   
+        }
+        
+        .link{
+          align-items: center;
+          color: inherit;
+          /* font-weight: 600; */
+          text-decoration: none;
+  
+          
+        }
+        
+        .li:hover{
+        filter: brightness(0.9);
+        background-color: #f0f0f0;
+  
+     
+        }
+        
+        .li.isActive{
+          background: linear-gradient(to right, #FF30AC, #C882FF);
+          color: #fff;
+    
+        }
+        
+        
+  
+    
+    
+    }

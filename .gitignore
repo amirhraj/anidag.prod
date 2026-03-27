@@ -1,0 +1,9 @@
+docker-images.tar.gz
+backup.sh
+env*
+/storage*
+build.txt
+MD.md
+frontend-dist
+/установка_сертификата
+установка_сертификата

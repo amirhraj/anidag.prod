@@ -1,0 +1,21 @@
+
+  .terms_container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Exo_2', sans-serif;
+    color: var(----text-card);
+  }
+
+  @media (max-width: 460px) {
+  
+    .terms_container{
+        width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 10px;
+        color: var(----text-card);  
+       
+    }
+
+  }

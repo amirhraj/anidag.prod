@@ -1,0 +1,101 @@
+/* components/GenresNavbar.module.css */
+
+  
+  .nav_gen {
+      border-bottom-left-radius: 10px;
+      margin-top: 100px;
+      font-family: 'Exo_2', sans-serif ;
+    }
+    
+    .nav_menu_gen {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      width: 1310px;
+      margin: 0;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .li_gen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease; /* Плавный переход для всех изменений */
+      cursor: pointer;
+      color: var(--text);
+      border-radius: 15px; /* Закругление углов */
+      width: 160px; /* Ширина кнопки */
+      height: 50px; /* Высота кнопки */
+      background: var(--bg-components); /* Фоновый цвет кнопки */
+      margin: 0 8px; /* Отступ между кнопками */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень по умолчанию */
+      font-size: 14px;
+    }
+    
+    .link_gen {
+      align-items: center;
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .li_gen:hover {
+      filter: brightness(0.9);
+      background-color: var( --li-nav-toogle);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+    }
+    
+    .li_gen.isActive {
+      background: linear-gradient(to right, #FF30AC, #C882FF);
+      color: #fff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Тень для активной кнопки */
+    }
+    
+  
+    @media (max-width: 460px) {
+  
+      .nav_gen {
+        border-bottom-left-radius: 10px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 13;
+      }
+      
+      .nav_menu_gen {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 5px;
+      }
+  
+      .li_gen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease; /* Плавный переход для всех изменений */
+        cursor: pointer;
+        color: var(--text);
+        border-radius: 15px; /* Закругление углов */
+        width: 100px; /* Ширина кнопки */
+        height: 50px; /* Высота кнопки */
+        background: var(--bg-components); 
+        margin: 0 8px; /* Отступ между кнопками */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень по умолчанию */
+        font-size: 10px;
+      }
+      
+      
+      
+  }
+    
+    

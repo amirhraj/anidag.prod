@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /docs
+Disallow: /RightsHoldersPolicy
+Disallow: /profile
+Disallow: /profile/*
+Disallow: /register
+Disallow: /verify
+Disallow: /verify/*
+Disallow: /category/news
+Disallow:/Adminpanel/*
+Disallow:/Adminpanel

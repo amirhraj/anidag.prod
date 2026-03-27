@@ -1,0 +1,363 @@
+/* styles.css */
+
+  
+  .ongoing_content {
+    margin-top: 150px;
+    width: 1280px;
+    font-family: 'Exo_2', sans-serif;
+    margin-right: auto;
+    margin-left: auto;
+  
+    }
+  
+  
+    .title{
+      width: 1230px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      color: var(--text);
+  
+    }
+  
+    .title::after{
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: -25px;
+      width: 20px;
+      height: 20px;
+      background-image: url('/icon.png');
+      background-size: contain; /* Изображение масштабируется, сохраняя пропорции */
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+      pointer-events: none; 
+    }
+  
+    .ongoing_wrepper{
+  
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Две колонки */
+      gap: 20px; /* Расстояние между карточками */
+      
+   
+    }
+    
+    .card_ongoing {
+      position: relative;
+      padding: 10px;
+      border: 1px solid var(--bg--border-card);
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      height: 70px;  
+      background-color: var(--bg-card);
+       cursor: pointer;
+  
+    }
+    .card_ongoing_title{
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      border-radius: 10px;
+      width: 90px;
+      height: 80px;
+      background-color: var(--bg--card-series);
+      margin: 0px;
+      
+      color: #FF9800;
+    }
+  
+  
+    .card_ongoing_episode{
+      font-size: 50px;
+      text-align: center;
+      height: 50px;
+      margin: 0;
+      font-weight: 900;
+      text-align: center;
+    }
+  
+  
+    .card_ongoing_episode_name{
+      margin: 0;
+      text-align: center;
+      font-size: 19px;
+     
+    }
+  .card_ongoing_container_img{
+      position: absolute;
+      top: 0;
+      width: 70px;
+      height: 90px;
+      margin: 0;
+      padding: 0;
+  }
+    .card_ongoing_img {
+      position: absolute;
+      top: 0;
+      width: 70px;
+      height: 90px;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .card_ongoing_name{
+      position: absolute;
+      top: 5px;
+      left: 90px;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      max-width: 390px;
+      font-size: inherit;
+      white-space: nowrap;       /* Запрещает перенос текста на новую строку */
+      overflow: hidden;          /* Обрезает текст, если он выходит за границы */
+      text-overflow: ellipsis; 
+      color: var(--text);
+    }
+  
+    .date_update{
+      position: absolute;
+      top: 50px;
+      left: 90px;
+      padding: 0;
+      margin: 0;
+      width: 120px;
+      height: 20px;
+      font-size: 16px;
+      background-color: var(--bg--card-series);
+      color: #606060;
+      border-radius: 15px;
+      text-align: center;
+  
+    }
+  
+    .raiting{
+      position: absolute;
+      top: 48px;
+      font-size: 20px;
+      left: 220px;
+      padding: 0;
+      margin: 0;
+      width: 50px;
+      height: 25px;
+      border-radius: 13px;
+      color: #fff;
+      background: #FF9800;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+  
+    .loadMoreButton {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background: linear-gradient(to right, #FF30AC, #C882FF);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .link{
+      text-decoration: none;
+      color: #606060;
+    }
+    
+    .spiner{
+      margin-left: auto;
+      margin-right: auto;
+      width: 600px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+    }
+  
+  
+  
+    @media (max-width: 460px) {
+  
+      .ongoing_content {
+        margin-top: 70px;
+        width: 360px;
+      
+        }
+        .title{
+          width: 250px;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          font-size: 8px;
+          text-align: center;
+      
+        }
+  
+        .title::after{
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: -25px;
+          width: 20px;
+          height: 20px;
+          background-image: url('/icon.png');
+          background-size: contain; /* Изображение масштабируется, сохраняя пропорции */
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 1;
+          pointer-events: none; 
+        }
+      
+  
+        .ongoing_wrepper{
+          width: 360px;
+          display: grid;
+          grid-template-columns:  1fr; /* Две колонки */
+          gap: 20px; /* Расстояние между карточками */
+          
+       
+        }
+  
+        .card_ongoing {
+          position: relative;
+          margin-right: auto;
+          margin-left: auto;
+          width: 290px;
+          padding: 10px;
+          border: 1px solid var(--bg--border-card);
+          border-radius: 5px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          height: 70px;  
+          background-color: var(--bg-card);
+          cursor: pointer;
+      
+        }
+  
+        .card_ongoing_title{
+          display: flex;       
+          flex-direction: column;       /* Включаем flexbox */
+          justify-content: center;    /* Горизонтальное выравнивание по центру */
+          align-items: center;  
+          position: absolute;
+          right: 13px;
+          top: 5px;
+          border-radius: 10px;
+          width: 35px;
+          height: 35px;
+          background-color: var(--bg--card-series);
+          margin: 0px;
+          padding-bottom: 5px;
+          padding-top: 0;
+          
+        }
+  
+        .card_ongoing_episode{
+          font-size: 20px;
+          text-align: center;
+          align-items: center;
+          width: 20px;
+          height: 20px;
+          margin: 0;
+          font-weight: 900;
+          text-align: center;
+        }
+      
+      
+        .card_ongoing_episode_name{
+          margin: 0;
+          text-align: center;
+          font-size: 10px;
+        }
+  
+  
+   
+  
+  
+        .card_ongoing_name{
+          position: absolute;
+          top: 5px;
+          left: 90px;
+          text-align: left;
+          padding: 0;
+  
+          width: 100px;
+          height: 20px;
+          font-size: 10px;
+        }
+  
+        .button_wrap{
+          width: 360px;
+        }
+  
+        .loadMoreButton {
+          width: 160px;
+          height: 50px;
+          margin-left: auto;
+          margin-right: auto;
+          
+          padding: 0;
+          /* display: block; */
+          /* margin: 15px auto; */
+          /* padding: 10px 10px; */
+          font-size: 16px;
+          color: #fff;
+          background: linear-gradient(to right, #FF30AC, #C882FF);
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      
+  
+          
+    .spiner{
+      margin-left: auto;
+      margin-right: auto;
+      width: 360px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .date_update{
+      position: absolute;
+      display: flex;
+      justify-content: center; /* Центрирование по горизонтали */
+      align-items: center; /* Центрирование по вертикали */
+      top: 65px;
+      left: 90px;
+      padding: 0;
+      margin: 0;
+      width: 70px;
+      height: 15px;
+      font-size: 10px;
+      background-color: var(--bg--card-series);
+      color: #606060;
+      border-radius: 15px;
+      text-align: center;
+  
+    }
+  
+    .raiting{
+      position: absolute;
+      top: 60px;
+      font-size: 15px;
+      left: 260px;
+      padding: 0;
+      margin: 0;
+      width: 40px;
+      height: 25px;
+      border-radius: 13px;
+      color: #fff;
+      background: #FF9800;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+      
+      
+  }
+    

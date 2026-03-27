@@ -1,0 +1,119 @@
+@import './fonts.css';
+
+:root {
+  font-family: "Exo_2", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  --bg: #fff;
+  --bg-components:#fff;
+  --text: #000;
+  --bg-darker: #fff;
+  --li-nav-toogle:#f0f0f0;
+  --search-block:#fff;
+  --bg-card: #f7f7f7;
+  --bg--border-card:#ededed;
+  --bg--card-series:#ccc;
+  --text-card:#000;
+  --card-module:#ddd;
+  --bg-darker-2: #363636;
+  --bg-darker-2: #f0f0f0;
+    --news-background: #ffffff;
+  --news-item-bg: #f0f0f0;
+  --news-text-color: #111;
+  --news-title-color: #222;
+  --news-date-color: #666;
+  --news-empty-color: #999;
+ 
+
+}
+
+
+
+
+
+body[data-theme='dark'] {
+  --bg: #0c0c0c;
+  --bg-darker: #363636;
+  --text: #fff;
+  --text-seacrch-fade: #838383;
+  --li-nav-toogle:#2b2b2b;
+  --search-block:#333;
+  --bg-components: #202020;
+  --bg-card: #202020;
+  --bg--border-card:#202020;
+  --bg--card-series:#838383;
+  --text-card:#838383;
+  --card-module:#202020;
+  --bg-darker-2: #363636;
+    --news-background: #1c1c1c;
+  --news-item-bg: #2a2a2a;
+  --news-text-color: #f0f0f0;
+  --news-title-color: #ffffff;
+  --news-date-color: #999;
+  --news-empty-color: #aaa;
+}
+
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}

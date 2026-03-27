@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+  }
+
+
+  .card_content{
+    display: flex;
+  }
+  
+  .card:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 16px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .rating {
+    font-size: 0.9rem;
+    color: #ffd700;
+    margin-top: 4px;
+  }
+
+  .deleteButton{
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    color: black;
+    background-color: white;
+  }
+
+
+  @media (max-width: 460px) {
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 360px;
+    }
+    
+    .card {
+      display: flex;
+      align-items: center;
+      background-color: #1e1e1e;
+
+      border-radius: 8px;
+      width: 290px;
+      height: auto;
+      transition: background-color 0.3s;
+    }
+
+
+    .card_content{
+      display: flex;
+    }
+    
+    
+    .card:hover {
+      background-color: #2a2a2a;
+      cursor: pointer;
+    }
+    
+    .thumbnail {
+      width: 60px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 16px;
+    }
+    
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .title {
+      font-size: 1rem;
+      color: #fff;
+      margin: 0;
+    }
+    
+    .rating {
+      font-size: 0.9rem;
+      color: #ffd700;
+      margin-top: 4px;
+    }
+  
+    .deleteButton{
+      width: 70px;
+      height: 50px;
+      cursor: pointer;
+      /* margin-left: auto; */
+      font-size: 10px;
+      color: black;
+      background-color: white;
+    }
+
+  }
+  

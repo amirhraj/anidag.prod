@@ -1,0 +1,21 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+ARG VITE_PROD_API_URL=/api
+ENV VITE_PROD_API_URL=/api
+RUN npm run build
+
+
+CMD ["sh", "-c", "mkdir -p /frontend-dist && cp -r /app/dist/* /frontend-dist/ && tail -f /dev/null"]
+
+# sudo mkdir -p frontend-dist
+# sudo chown -R 999:999 frontend-dist
+
+
+
+#docker run -d -p 5173:5173 --name front-react-dev front-react-dev

@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'Circe';
+    src: url('/fonts/circe-light.ttf') format('truetype'); /* Путь к шрифту */
+    font-weight: 400; /* Обычный вес шрифта */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circe';
+    src: url('/fonts/circe-bold.ttf') format('truetype'); /* Путь к жирному шрифту */
+    font-weight: 700; /* Жирный вес */
+    font-style: normal;
+}
+
+
+.middle_content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1080px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Circe', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: none;
+}
+
+
+
+
+.conteiner_input_login{
+width: 900px;
+height: 50px;
+display: flex;   
+align-items: center; 
+gap: 30px;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    border: 1px double #e5e5e5;
+}
+.input:focus{
+   
+    border: 1px double #000;
+}
+
+.conteiner_input_email{
+
+width: 900px;
+height: 50px;
+display: flex;   
+align-items: center; 
+gap: 30px;
+}
+
+.conteiner_input_password{
+    position: relative;
+    width: 900px;
+height: 50px;
+display: flex;   
+align-items: center; 
+gap: 30px;
+}
+
+
+.tooltip {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    /* background: rgba(0, 0, 0, 0.8); */
+    color: #777;;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+.button{
+    background: linear-gradient(to right, #FF30AC, #C882FF); /* Убираем фоновый цвет для кнопок темы */
+    border: none; /* Убираем бордер */
+    cursor: pointer; /* Меняем курсор на pointer для кликабельности */
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+
+
+.important {
+    position: absolute;
+    top: -20px;
+    left: 90px;
+    font-weight: bold;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #777;
+}
+
+.stars{
+    color: red;
+}
+
+@media (max-width: 450px)  {
+    .middle_content{
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Circe', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        
+    }
+    
+    .form{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border: none;
+    }
+    
+    
+    
+    
+    .conteiner_input_login{
+    width: 250px;
+    height: 30px;
+    display: flex;   
+    align-items: center; 
+    gap: 30px;
+    }
+    
+    .input{
+        width: 100%;
+        height: 100%;
+        border: 1px double #e5e5e5;
+    }
+    .input:focus{
+       
+        border: 1px double #000;
+    }
+    
+    .conteiner_input_email{
+    width: 250px;
+    height: 30px;
+    display: flex;   
+    align-items: center; 
+    gap: 30px;
+    }
+    
+    .conteiner_input_password{
+    width: 250px;
+    height: 30px;
+    display: flex;   
+    align-items: center; 
+    gap: 30px;
+    }
+    
+    .button{
+        background: linear-gradient(to right, #FF30AC, #C882FF); /* Убираем фоновый цвет для кнопок темы */
+        border: none; /* Убираем бордер */
+        cursor: pointer; /* Меняем курсор на pointer для кликабельности */
+        height: 30px;
+        width: 100px;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 10px;
+        margin-top: 20px;
+    }
+    
+
+    .tooltip {
+        opacity: 1;
+        transform: scale(1);
+        display: block;
+        z-index: 2;
+        background-color: #e5e5e5;
+        margin-left: 80px;
+        
+      }
+      .hidden {
+        display: none;
+      }
+
+
+}

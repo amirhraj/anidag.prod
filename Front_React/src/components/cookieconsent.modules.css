@@ -1,0 +1,102 @@
+
+
+.cookie-consent {
+    position: fixed;
+    font-family: "Exo_2", sans-serif;
+    bottom: 1rem;
+    width: 300px;
+    left: 0%;
+    transform: translateX(-50%);
+    background: var(--bg-darker);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.5s, transform 0.5s;
+    text-align: center;
+    z-index: 30;
+  }
+  
+  .cookie-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    pointer-events: none;
+  }
+  
+  .cookie-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .cookie-button {
+    background: linear-gradient(to right, #FF30AC, #C882FF);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s;
+  }
+  
+  .cookie-button:hover {
+    background: #2563eb;
+  }
+  
+  .cookie-text{
+    color: var(--text-card);
+  }
+
+  @media (max-width: 450px)  {
+
+    .cookie-consent {
+      position: fixed;
+      font-family: "Exo_2", sans-serif;
+      bottom: 1rem;
+      width: 300px;
+      left: 60px;
+      transform: translateX(-50%);
+      background: var(--bg-darker);
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.5s, transform 0.5s;
+      text-align: center;
+      z-index: 30;
+    }
+    
+    .cookie-hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      pointer-events: none;
+    }
+    
+    .cookie-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .cookie-button {
+      background: linear-gradient(to right, #FF30AC, #C882FF);
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      transition: background 0.3s;
+    }
+    
+    .cookie-button:hover {
+      background: #2563eb;
+    }
+    
+  .cookie-text{
+    color: var(--text-card);
+  }
+  
+
+  }

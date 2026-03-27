@@ -1,0 +1,688 @@
+  
+  .card_module{
+    width: 1200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-module);
+    padding: 20px;
+    font-family: 'Exo_2' , sans-serif;
+    background-color: var(--bg-components);
+    border-radius: 10px;
+}
+
+.card_wrapper_module {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 8px;  
+    background-color: var(--bg-components);
+  }
+
+  .card_image_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .card_img {
+    max-width: 200px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+  
+  .card_content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 0;
+    color: var(--text-card);
+  
+  }
+
+  .card_title_container{
+    width: auto;
+    height: auto;
+  }
+  
+  .card_title {
+    width: 600px;
+    width: auto;
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-top: 0;
+  }
+  
+  .card_title_orig{
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    margin-top: 0;
+  }
+
+
+  .card_content p {
+    margin: 5px 0;
+  }
+  .Navbar{
+    text-decoration: none;
+  }
+  
+  .watch_button {
+    display: inline-block;
+    width: 200px;
+    margin-right: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #FF30AC, #C882FF);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .watch_button:hover {
+    background-color: #005bb5;
+  }
+
+  .franchise{
+    width: 1280px;
+    height: 80px;
+  }
+
+  .franchise_wraaper_title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .franchise_img{
+    width: 200px;
+    height: 285px;
+    border-radius: 20px;
+   
+  }
+
+  .franchise_card{
+    display: flex;
+    gap: 25px;
+    
+  }
+  .a{
+    text-decoration: none;
+    color: black;
+  }
+
+  /* .middle_content{
+    margin-left: auto;
+    margin-right: auto;
+     margin-top: 300px;
+    margin-bottom: 0;
+    padding: 0;
+    width: 600px;
+    height: 100%;
+    text-align: center;
+  } */
+  .middle_content {
+    margin:  20px auto;  /* центр и отступ снизу */
+    padding: 0;
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    color: var(--text-card);
+  }
+
+  /* .middle_contenthidden {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 0;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+  }
+ */
+  .p  {
+    color: var(--text-card);
+  }
+
+  .player_block{
+    margin-top: 50px;
+    width: 600px;
+    min-height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: auto;
+    padding-right: auto;
+
+  }
+
+  .player_player{
+    width: 600px;
+    min-height: 400px;
+  }
+
+
+  .player_block_iframe{
+    width: 600px;
+    min-height: 400px;
+  }
+
+  .franchise_contenthidden,
+  .franchise_cardhidden{display: none;}
+
+  .hiiden_block{
+    display: none;
+  }
+
+  .span{
+    font-weight: bold;
+  }
+
+  .pRaiting{
+    display: flex;
+    gap: 10px;
+  }
+
+  .spanRaiting{
+    width: 50px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    background: #FF9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: var(--text);
+    margin-top: -3px;
+  }
+
+  .pStatus{
+    display: flex;
+    gap: 10px;
+  }
+  .status{
+    width: 90px;
+    height: 25px;
+    background: #65c03e;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3px;
+    color: var(--text);
+  }
+
+
+
+  .media_actions{
+    position: relative;
+    width: 600px;
+    height: 50px;
+    background-color: #FF9800;
+  }
+  /* .like{
+    width: 400px;
+    height: 400px;
+    background: red;
+  } */
+
+/* Контейнер для всех элементов */
+.interaction {
+  display: flex;
+  gap: 20px; /* Расстояние между элементами */
+  position: relative;
+  color: var(--text-card);
+}
+
+/* Контейнер для числа и иконки */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между числом и иконкой */
+  position: relative;
+}
+
+/* Число */
+.number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Иконка лайка */
+.like {
+  background-image: url('/likes.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+}
+
+
+
+/* Иконка дизлайка */
+.dislike {
+  background-image: url('/dislike.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Иконка просмотров */
+.views {
+
+  background-image: url('/watch.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+
+}
+
+
+.like:hover,
+.dislike:hover{
+opacity: 0.6;
+}
+
+
+.clipLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* на всю высоту экрана */
+  color: var(--text);
+}
+
+
+.bookMark{
+  width: 35px;
+  height: 35px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* .bookMarkIcon{
+
+  background-color: #fff;
+} */
+
+/* .bookMarkIcon:hover{
+  background-color: #FF30AC;
+} */
+
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 90%;
+  transform: translateX(-50%);
+  background-color: var(--bg-components);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  z-index: 9999;
+  animation: fadein 0.3s ease-out, fadeout 0.3s ease-in 2.7s;
+}
+
+
+  .like, .dislike, .views, .bookMarkIcon {
+  outline: none;
+  user-select: none;
+}
+
+
+
+
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+ 
+.container_tg{
+  width: 300px;
+  height: 70px;
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  background-color: #005bb5;
+  border-radius: 10px;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #007bff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00aaff;
+  }
+  100% {
+    box-shadow: 0 0 5px #007bff;
+  }
+}
+
+.icon_telegram{
+  width: 40px;
+  height: 40px;
+   fill: white;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+@media (max-width: 460px) {
+    .card_module{
+      position: relative;
+      width: 360px;
+      min-height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--card-module);
+      /* padding: 20px; */
+      margin-top: 0;
+      margin-bottom: 0;
+      background-color: var(--bg-components);
+  }
+
+
+
+
+.p{
+  padding: 5px;
+  text-align: center;
+}
+
+  
+.card_wrapper_module {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 8px;  
+  background-color: var(--bg-components);
+}
+
+
+.card_image_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card_img {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+  text-align: center;
+  width: 300px;
+
+}
+
+
+
+.pRaiting{
+  display: flex;
+  gap: 10px;
+}
+
+.spanRaiting{
+  width: 50px;
+  height: 25px;
+  padding: 0;
+  margin-right: auto;
+  margin-left: 0;
+  background: #FF9800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  margin-top: -3px;
+}
+
+.franchise{
+  width: 350px;
+  height: 80px;
+  display: none;
+}
+
+.span{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.status{
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.middle_content{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 300px;
+  margin-bottom: 0;
+  padding: 0;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  color: var(--text-card);
+  /* font-size: 7px; */
+}
+
+
+.player_block{
+  width: 300px;
+  min-height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+
+}
+
+
+.player_player{
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.player_block_iframe{
+  position: absolute;
+  left: 25px;
+  width: 300px;
+ height: 100px;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+
+
+
+.description{
+  text-align: center;
+}
+
+
+.card_title_container{
+  width: 300px;
+  min-height: 60px;
+  height: auto;
+  margin: 0;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.card_title{
+  width: 300px;
+  font-size: 18px;
+}
+
+.card_title_orig{
+  font-size: 15px;
+}
+
+
+
+.interaction {
+  display: flex;
+  gap: 20px; /* Расстояние между элементами */
+ 
+  position: relative;
+  color: var(--text-card);
+}
+
+/* Контейнер для числа и иконки */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между числом и иконкой */
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Число */
+.number {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Иконка лайка */
+.like {
+  background-image: url('/likes.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-left: 10px;
+}
+
+/* Иконка дизлайка */
+.dislike {
+  background-image: url('/dislike.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Иконка просмотров */
+.views {
+
+  background-image: url('/watch.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+
+}
+
+
+
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-components);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  z-index: 9999;
+  animation: fadein 0.3s ease-out, fadeout 0.3s ease-in 2.7s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+
+  .like, .dislike, .views, .bookMarkIcon {
+  outline: none;
+  user-select: none;
+}
+
+  }
