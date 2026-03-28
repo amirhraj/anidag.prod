@@ -68,8 +68,8 @@ def add_anime(anime_data: dict, db: Session):
     skip_ids, skip_titles = load_skip_from_log()
 
     for anime in anime_data["results"]:
-        if anime["id"] in skip_ids:
-            continue
+        # if anime["id"] in skip_ids:
+        #     continue
         if anime["title"] in skip_titles:
             continue
         # Запрос к базе данных, чтобы найти запись тайтла
