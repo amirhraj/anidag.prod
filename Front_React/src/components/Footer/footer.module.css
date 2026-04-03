@@ -108,9 +108,9 @@
    
     width: 200px;
     height: 120px;
-    background-image: url('/anidag_garland.png');
+    background-image: url('/anidag.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     border-radius: 30%;
   }
@@ -614,9 +614,9 @@
     
     .img_logo{
      
-          width: 70px;
-      height: 60px;
-      background-image: url('/anidag_garland_mob.png');
+     width: 60px;
+      height: 50px;
+      background-image: url('/anidag_mobile.svg');
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;

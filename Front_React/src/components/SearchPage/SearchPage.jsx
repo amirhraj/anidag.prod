@@ -65,7 +65,7 @@ export default function SearchResults() {
   
     // Перенаправляем пользователя
     const itemId = item.id || 'unknown-id';
-    navigate(`/card/${itemId}/seaarch`, { state: { data: item } });
+    navigate(`/anime/${itemId}/seaarch`, { state: { data: item } });
   };
 
   const handleToggle = (index) => {
@@ -77,7 +77,7 @@ export default function SearchResults() {
 
 //   const handleCardClick = (item) => {
 //     const itemId = item.id || 'movie-97770';
-//     navigate(`/card/${itemId}/cardOva`, { state: { data: item } });
+//     navigate(`/anime/${itemId}/cardOva`, { state: { data: item } });
 //   };
 
   if (loading) return <div className={styles.clipLoader}><ClipLoader color="#eb4d4b" size={50} /></div>;
@@ -100,7 +100,7 @@ export default function SearchResults() {
         return (
         //   <div key={index} className={styles.card} onClick={() => handleCardClick(item)}>
         <div key={index} className={styles.card} onClick={() => handleCardClick(item)} >
-             {/* <Link to={`/card/${item.id}/cardSearch`} state={{ data: item }}  className={styles.link} > */}
+             {/* <Link to={`/anime/${item.id}/cardSearch`} state={{ data: item }}  className={styles.link} > */}
                 <img src={item.material_data?.poster_url || item.material_data?.anime_poster_url} alt={item.title} className={styles.poster}  onError={(e) => { e.target.src = "/anidag_default.png"; }} />
                 <div className={styles.rating}>{item.material_data?.shikimori_rating}</div>
                 <h3 className={styles.title}>{item.title}</h3>

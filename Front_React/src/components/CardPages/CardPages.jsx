@@ -21,7 +21,7 @@ const API_MAP = {
     tv:'/animesTitleMine',
     ova: '/animeOvaAll',
     top: '/animeTop',
-    cardOngoing: '/animes',
+    animeongoing: '/animes',
     ongoing : '/animes',
     anons: '/animeAnons',
     seaarch: '/animeSearch'
@@ -42,7 +42,8 @@ const CardPages = () => {
     const [toastMessage, setToastMessage] = useState("");
     const [isAdded, setIsAdded] = useState(false);
     const [user, setUser] = useState(null);
-    const { id, cardType } = useParams(); 
+    const { ids, cardType } = useParams(); 
+    const id = ids?.match(/(serial|movie|tv|ova)-\d+$/)?.[0] || ids;
     const navigate = useNavigate();
     const currentTimeRef = useRef(0);
     const durationRef = useRef(0);

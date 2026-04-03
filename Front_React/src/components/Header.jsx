@@ -358,7 +358,7 @@ const handleChooseBackground = async (backgroundId) => {
                                           <input type="hidden" name="do" value="search"/>
                                           <input type="hidden" name="subaction" value="search"/>
                                           <input onChange={handleInputChange} className={stylesHeader.search_block__input} id="story" name="story" placeholder="Поиск на сайте..." type="text" autoComplete="off"/>
-                                          <Link to={searchQuery ? `/card/${searchQuery}/cardSearch` : '#'} className={stylesHeader.logo}>
+                                          <Link to={searchQuery ? `/anime/${searchQuery}/cardSearch` : '#'} className={stylesHeader.logo}>
                                                <button className={stylesHeader.search_block__btn}   aria-label="Искать" type="submit"></button>
                                           </Link>
                                         </form> */}

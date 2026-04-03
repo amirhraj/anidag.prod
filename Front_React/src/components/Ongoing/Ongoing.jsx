@@ -52,10 +52,23 @@ function OngoingSection() {
           //   const params = item.worldart_link.split('?id=')[1];
           //   url = `http://www.world-art.ru/animation/img/13000/${params}/1.jpg`;
           // }
+              const makeSlug = (text = "") => {
+                  return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-");
+                };
+
+                const titleForSlug =
+                  item.title_orig ??
+                  "anime";
+                const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
 
           return (
             <div className={cssong.card_ongoing} key={index}>
-              <Link className={cssong.link} to={`/card/${item.id}/cardOngoing`} target="_blank">
+              <Link className={cssong.link} to={`/anime/${seoPart}/animeongoing`} target="_blank">
                 {/* <img
                   src={item.poster_url || url}
                   alt={item.material_data.anime_title}

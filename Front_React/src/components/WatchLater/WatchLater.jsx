@@ -27,7 +27,7 @@ const AnimeList = ({ animeList , onRemoved }) => {
             <div className={styles.card}>
 
         
-            <Link to={`/card/${anime.id}/${item.type}`} target="_blank">
+            <Link to={`/anime/${anime.id}/${item.type}`} target="_blank">
 
                             <div key={item.id} className={styles.card_content}>
                             <img

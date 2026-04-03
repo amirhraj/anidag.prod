@@ -45,7 +45,7 @@ function App() {
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="/category/:type/:value?" element={<AnimeListPage />} />
           <Route path="/category/schedule" element={<Sheduler_section />} />
-          <Route path="/card/:id/:cardType" element={<CardPages />} />
+          <Route path="/anime/:ids/:cardType" element={<CardPages />} />
           <Route path="/search/:query" element={<SearchResults />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verify/:token" element={<VerifyUser />} />

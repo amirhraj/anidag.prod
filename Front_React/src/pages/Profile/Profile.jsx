@@ -419,7 +419,7 @@ const Profile = () => {
     history.map((item) => (
       <Link 
         key={`${item.anime_id}-${item.episode}`} 
-        to={`/card/${item.anime_id}/${item.type}`}  
+        to={`/anime/${item.anime_id}/${item.type}`}  
         className={stylesProfile.link}
         target="_blank"
       >
@@ -469,7 +469,7 @@ const Profile = () => {
           <>
             {history.map((item) => (
               <Link 
-                to={`/card/${item.anime_id}/${item.type}`}  
+                to={`/anime/${item.anime_id}/${item.type}`}  
                 className={stylesProfile.link}
                 key={`${item.anime_id}-${item.episode}-${item.updated_at}`}
               >

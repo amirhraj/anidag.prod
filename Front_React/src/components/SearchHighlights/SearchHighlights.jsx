@@ -103,14 +103,40 @@ const scroll = (direction) => {
       <div className={styles.carousel}>
         <button className={styles.arrowLeft} onClick={() => scroll('left')}>←</button>
         <div className={styles.track} ref={scrollRef}>
-          {items.map((item, idx) => (
-            <Link  to={`/card/${item.id}/seaarch`} target="_blank">
+          {/* {items.map((item, idx) => (
+            <Link  to={`/anime/${item.id}/seaarch`} target="_blank">
                     <div key={idx} className={styles.card}>
                     <img src={item.poster_url || item.anime_poster_url} alt={item.title} onError={(e) => { e.target.src = "/anidag_default.png"; }}/>
                     <p>{item.title}</p>
                     </div>
             </Link>
-          ))}
+          ))} */}
+
+          {items.map((item, idx) => {
+              const makeSlug = (text = "") => {
+                return text
+                  .toLowerCase()
+                  .trim()
+                  .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                  .replace(/\s+/g, "-")
+                  .replace(/-+/g, "-");
+              };
+
+              const titleForSlug = item.title_orig ?? item.title ?? "anime";
+              const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
+
+              return (
+                <Link key={idx} to={`/anime/${seoPart}/seaarch`}>
+                  <div className={styles.card}>
+                    <img
+                      src={item.poster_url || item.anime_poster_url}
+                      alt={item.title}
+                    />
+                    <p>{item.title}</p>
+                  </div>
+                </Link>
+              );
+            })}
         </div>
         <button className={styles.arrowRight} onClick={() => scroll('right')}>→</button>
       </div>

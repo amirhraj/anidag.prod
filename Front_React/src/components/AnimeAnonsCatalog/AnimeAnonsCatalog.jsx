@@ -109,9 +109,23 @@ export default function AnimeListPage() {
              ? `${description.substring(0, MAX_DESCRIPTION_LENGTH)}...`
              : description;
 
+             const makeSlug = (text = "") => {
+                  return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-");
+                };
+
+                const titleForSlug =
+                  item.title_orig ??
+                  "anime";
+                const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
+
          return (
            <div key={index} className={styles.card}>
-             <Link to={`/card/${item.id}/${type === 'genre' ? 'ongoing' : type}`}  className={styles.link} target="_blank">
+             <Link to={`/anime/${seoPart}/${type === 'genre' ? 'ongoing' : type}`}  className={styles.link} target="_blank">
             
                     <img src={item.poster_url ?? item.poster.original} alt={item.title} className={styles.poster} onError={(e) => { e.target.src = "/anidag_default.png"; }} />
                     <div className={styles.rating}>

@@ -40,8 +40,8 @@ for row in result:
     title = row.title
     description = row.description or "Описание отсутствует."
     poster_url = row.poster_url
-    # https://www.anidag.ru/card/serial-65974/cardOngoing
-    series_link = f"https://www.anidag.ru/card/{row.id}/cardOngoing"
+    # https://www.anidag.ru/anime/serial-65974/animeongoing
+    series_link = f"https://www.anidag.ru/anime/{row.id}/animeongoing"
 
     # Отправка фото с подписью
     payload = {

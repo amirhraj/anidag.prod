@@ -56,10 +56,24 @@ export default function MainTitlesSection() {
             url = `http://www.world-art.ru/animation/img/13000/${params}/1.jpg`;
           }
 
+             const makeSlug = (text = "") => {
+                  return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-");
+                };
+
+                const titleForSlug =
+                  item.title_orig ??
+                  "anime";
+                const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
+
           return (
             <Card
               key={item.id}
-              href={`/card/${item.id}/card`}
+              href={`/anime/${seoPart}/card`}
               title={item.title}
               image={item.poster_url || "/anidag_default.png"
               }

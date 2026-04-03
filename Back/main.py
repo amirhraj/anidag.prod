@@ -1052,7 +1052,7 @@ def get_watch_later(request: Request, db: Session = Depends(get_db)):
     # tv:'/animesTitleMine',
     # ova: '/animeOvaAll',
     # top: '/animeTop',
-    # cardOngoing: '/animes',
+    # animeongoing: '/animes',
     # ongoing : '/animes',
     # anons: '/animeAnons',
     # seaarch: '/animeSearch'

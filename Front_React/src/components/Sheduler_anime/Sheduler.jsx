@@ -1,135 +1,3 @@
-
-// import { useState, useEffect } from 'react';
-// import $api from '../../api/auth';
-// import stylesShedule from './shedule.module.css';
-// import { ClipLoader } from 'react-spinners';
-// import { Link } from 'react-router-dom';
-
-// export default function OvaSection() {
-//   const [series, setSeries] = useState([]);
-//   const [isExpanded, setIsExpanded] = useState({});
-//   const [loading, setLoading] = useState(false);
-//   const [skip, setSkip] = useState(0);
-//   const [limit] = useState(16); 
-
-//   const MAX_DESCRIPTION_LENGTH = 100;
-
-//   const handleToggle = (index) => {
-//     setIsExpanded((prevState) => ({
-//       ...prevState,
-//       [index]: !prevState[index],
-//     }));
-//   };
-
-//   useEffect(() => {
-
-//     getAnimeTop();
-
-//   }, []);
-
-//   const weekSchedule = {
-//     Понедельник: [],
-//     Вторник: [],
-//     Среда: [],
-//     Четверг: [],
-//     Пятница: [],
-//     Суббота: [],
-//     Воскресенье: []
-//   };
-  
-//   async function getAnimeTop() {
-//     try {
-//       setLoading(true);
-//       const response = await $api.get(`/animes/scheduler/`);
-//       // console.log(response.data, "SHEDUL");
-  
-//       const newSeries = response.data;
-//       const updatedSchedule = { ...weekSchedule };
-  
-//       newSeries.forEach(item => {
-//         const weekDay = getWeekDay(item.next_episode_at);
-//         if (updatedSchedule[weekDay]) {
-//           updatedSchedule[weekDay].push(item);
-//         }
-//       });
-  
-//       setSeries(updatedSchedule);
-//       setSkip(prevSkip => prevSkip + limit);
-//     } catch (error) {
-//       console.log(error);
-//     } finally {
-//       setLoading(false);
-//     }
-//   }
-  
-
-
-
-// const getWeekDay = (dateString) => {
-//     const days = [ 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница','Суббота', 'Воскресенье'];
-//     const date = new Date(dateString);
-//     const mondayFirstIndex = (date.getDay() + 6) % 7;
-
-//     return days[mondayFirstIndex];
-//     // const date = new Date(dateString);
-//     // return days[date.getDay()];
-//   };
-
-
-//   return (
-//     <div>
-//       <div className={stylesShedule.container}>
-               
-//                     <div >
-                   
-//                             {Object.entries(series).map(([day, items], index) => (
-//                                 <div key={index} className={stylesShedule.weekDaysWrapers}>
-//                                     <h1 className={stylesShedule.h2}>
-//                                         {day}
-//                                     </h1>
-                                   
-//                                     <div className={stylesShedule.weekDaysWrapper}>
-//                                     {items.map((value, index)=>{
-                                      
-                                       
-//                                                 return (
-//                                                     <div key={value.id} className={stylesShedule.card}>
-//                                                             <div  className={stylesShedule.card}>
-//                                                                 <Link to={`/card/${value.id}/cardOngoing`} className={stylesShedule.link}>
-//                                                                     <img src={value.poster_url} alt={value.title} className={stylesShedule.poster} />
-//                                                                     <div className={stylesShedule.rating}>
-//                                                                                     {value && value.material_data ? value.material_data.shikimori_rating || 0 : 0}
-//                                                                     </div>
-//                                                                     <h3 className={stylesShedule.title}>{value.title}</h3>
-//                                                                     {/* <p className={stylesShedule.description}>{truncatedDescription}</p> */}
-//                                                                     {/* {description.length > MAX_DESCRIPTION_LENGTH && ( */}
-//                                                                     {/* // <button onClick={() => handleToggle(index)} className={stylesShedule.toggleButton}>
-//                                                                     //     {isItemExpanded ? 'Скрыть' : 'Читать больше'}
-//                                                                     // </button>
-//                                                                     // )} */}
-//                                                                 </Link>
-//                                                                 </div>
-//                                                     </div>
-//                                                        );
-//                                            })}    
-//                                     </div>
-//                                 </div>  
-//                             ))} 
-                        
-//                     </div>
-//       </div>
-   
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
 import { useState, useEffect, useMemo } from "react";
 import $api from "../../api/auth";
 import stylesShedule from "./shedule.module.css";
@@ -272,10 +140,10 @@ useEffect(() => {
                 isOpen ? stylesShedule.open : stylesShedule.closed
               }`}
             >
-              {items.map((value, idx) => (
+              {/* {items.map((value, idx) => (
                 <div key={`${day}-${value.id}-${idx}`} className={stylesShedule.card}>
                   <Link
-                    to={`/card/${value.id}/cardOngoing`}
+                    to={`/anime/${value.id}/animeongoing`}
                     className={stylesShedule.link}
                   >
                     <img
@@ -289,7 +157,44 @@ useEffect(() => {
                     <h3 className={stylesShedule.title}>{value.title}</h3>
                   </Link>
                 </div>
-              ))}
+              ))} */}
+              {items.map((value, idx) => {
+                    const makeSlug = (text = "") => {
+                      return text
+                        .toLowerCase()
+                        .trim()
+                        .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                        .replace(/\s+/g, "-")
+                        .replace(/-+/g, "-");
+                    };
+
+                    const titleForSlug =
+                      value.title_orig ??
+                      value.title ??
+                      value.russian_name ??
+                      "anime";
+
+                    const seoPart = `${makeSlug(titleForSlug)}-${value.id}`;
+
+                    return (
+                      <div key={`${day}-${value.id}-${idx}`} className={stylesShedule.card}>
+                        <Link
+                          to={`/anime/${seoPart}/animeongoing`}
+                          className={stylesShedule.link}
+                        >
+                          <img
+                            src={value.poster_url}
+                            alt={value.title}
+                            className={stylesShedule.poster}
+                          />
+                          <div className={stylesShedule.rating}>
+                            {value?.material_data?.shikimori_rating || 0}
+                          </div>
+                          <h3 className={stylesShedule.title}>{value.title}</h3>
+                        </Link>
+                      </div>
+                    );
+                  })}
             </div>
 
           </div>
