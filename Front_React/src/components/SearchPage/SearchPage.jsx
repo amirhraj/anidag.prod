@@ -65,7 +65,7 @@ export default function SearchResults() {
   
     // Перенаправляем пользователя
     const itemId = item.id || 'unknown-id';
-    navigate(`/anime/${itemId}/seaarch`, { state: { data: item } });
+    navigate(`/anime/${itemId}/search`, { state: { data: item } });
   };
 
   const handleToggle = (index) => {

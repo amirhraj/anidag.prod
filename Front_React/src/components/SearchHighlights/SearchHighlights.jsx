@@ -104,7 +104,7 @@ const scroll = (direction) => {
         <button className={styles.arrowLeft} onClick={() => scroll('left')}>←</button>
         <div className={styles.track} ref={scrollRef}>
           {/* {items.map((item, idx) => (
-            <Link  to={`/anime/${item.id}/seaarch`} target="_blank">
+            <Link  to={`/anime/${item.id}/search`} target="_blank">
                     <div key={idx} className={styles.card}>
                     <img src={item.poster_url || item.anime_poster_url} alt={item.title} onError={(e) => { e.target.src = "/anidag_default.png"; }}/>
                     <p>{item.title}</p>
@@ -126,7 +126,7 @@ const scroll = (direction) => {
               const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
 
               return (
-                <Link key={idx} to={`/anime/${seoPart}/seaarch`}>
+                <Link key={idx} to={`/anime/${seoPart}/search`}>
                   <div className={styles.card}>
                     <img
                       src={item.poster_url || item.anime_poster_url}

@@ -15,6 +15,7 @@
     "jwt-decode": "^4.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.5.3",
     "react-spinners": "^0.17.0",
     "recharts": "^3.0.2"

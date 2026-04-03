@@ -9,6 +9,7 @@ import { ClipLoader } from 'react-spinners';
 import { jwtDecode } from "jwt-decode";
 import BookmarkIcon from "../Icons/BookMark";
 import TelegramIcons from '../Icons/TelegramIcon.jsx'
+import { Helmet } from "react-helmet-async";
 
 import ErrorBoundaryImage from '../ErrorBoundaryImage /ErrorBoundaryImage';
 
@@ -24,7 +25,7 @@ const API_MAP = {
     animeongoing: '/animes',
     ongoing : '/animes',
     anons: '/animeAnons',
-    seaarch: '/animeSearch'
+    search: '/animeSearch'
   };
 
 
@@ -398,10 +399,10 @@ return (
 <> 
   {card ? (
    <div >
-                    {/* <h1>{card.title}</h1> */}
-                    <title>{card.title}</title>
-                    <meta name="description" content={card.description} />
-                    <meta property="og:title" content="Anidag - Смотри аниме онлайн" />
+    <Helmet>
+      <title>{card?.title}</title>
+      <meta name="description" content={card?.description?.slice(0, 150)} />
+    </Helmet>
 
                     <div key={card.id} className={styles.card_module}>
                         <div className={styles.card_wrapper_module}>

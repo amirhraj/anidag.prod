@@ -1055,7 +1055,7 @@ def get_watch_later(request: Request, db: Session = Depends(get_db)):
     # animeongoing: '/animes',
     # ongoing : '/animes',
     # anons: '/animeAnons',
-    # seaarch: '/animeSearch'
+    # search: '/animeSearch'
 
     for item in watch_list:
         anime = None
