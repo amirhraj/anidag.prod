@@ -4,12 +4,12 @@ from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
 
-SITE_URL = "https://anidag.ru/api/health"
+SITE_URL = f"{os.getenv('ANI_URL')}/api/health"
 TG_TOKEN = os.getenv("BOT_TOKEN_HELATH")
 TG_CHAT_ID = -5270878964  # твой реальный chat_id
 
 TIMEOUT = 5
-STATE_FILE = "site_health_state.txt"  # где храним состояние
+# STATE_FILE = "site_health_state.txt"  # где храним состояние
 
 
 def send_telegram(text: str):
@@ -22,16 +22,16 @@ def send_telegram(text: str):
     print("TG:", r.status_code, r.text)
 
 
-def get_previous_state() -> str:
-    if not os.path.exists(STATE_FILE):
-        return "unknown"
-    with open(STATE_FILE, "r") as f:
-        return f.read().strip()
+# def get_previous_state() -> str:
+#     if not os.path.exists(STATE_FILE):
+#         return "unknown"
+#     with open(STATE_FILE, "r") as f:
+#         return f.read().strip()
 
 
-def save_state(state: str):
-    with open(STATE_FILE, "w") as f:
-        f.write(state)
+# def save_state(state: str):
+#     with open(STATE_FILE, "w") as f:
+#         f.write(state)
 
 
 def check_site() -> bool:

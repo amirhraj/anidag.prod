@@ -22,6 +22,20 @@ const AnimeList = ({ animeList , onRemoved }) => {
         {animeList.map((item) => {
           const anime = item.data;
         //   console.log(anime.id, "ANIME")
+           const makeSlug = (text = "") => {
+                  return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+                    .replace(/\s+/g, "-")
+                    .replace(/-+/g, "-");
+                };
+
+                const titleForSlug =
+                  anime.title_orig ??
+                  "anime";
+                const seoPart = `${makeSlug(titleForSlug)}-${item.id}`;
+
   
           return (
             <div className={styles.card}>
