@@ -28,7 +28,7 @@ from sqlalchemy import func, String, cast
 from datetime import datetime, timezone, timedelta
 from auth.auth_jwt import create_access_token, create_refresh_token, decode_access_token, decode_refresh_token, decode_access
 from fastapi.encoders import jsonable_encoder
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 import logging
 from pathlib import Path
 from hashPassFunction.util import get_password_hash , verify_password
@@ -207,8 +207,6 @@ from rapidfuzz import fuzz
 
 
 SIMILARITY_THRESHOLD = 80
-
-
 def title_similarity(a: str, b: str) -> int:
     if not a or not b:
         return 0
@@ -337,6 +335,7 @@ def match_alloha_anime_api():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+        
 #################################################
 
 

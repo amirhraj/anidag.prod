@@ -72,8 +72,8 @@ def add_anime(anime_data: dict, db: Session):
         #     continue
         if anime["title"] in skip_titles:
             continue
-        if anime.get("year") and int(anime["year"]) > 2024:
-            continue
+        # if anime.get("year") and int(anime["year"]) > 2024:
+        #     continue
         # Запрос к базе данных, чтобы найти запись тайтла
         existing_anime = db.query(AnimeSchemaBase) \
             .filter(AnimeSchemaBase.title == anime["title"]) \

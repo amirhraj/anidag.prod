@@ -49,20 +49,20 @@ def process_data(url):
             
             # Переход к следующему URL
             url = data.get('next_page')  # Получаем следующий URL
-            print("Следующая страница:", url)
+            # print("Следующая страница:", url)
         else:
             print(f"Ошибка получения данных: {response.status_code}")
             # print("Тело ответа:", response.text)
             break  # Выходим из цикла при ошибке
 
 # Список годов для обхода
-# years = [2026,2025, 2024]
-years = [2026]
+years = [2026,2025, 2024]
+# years = [2026]
 
 # Проход по каждому году
 for year in years:
     print(f"Обрабатываем год: {year}")
-    initial_url = f"{base_url}?token={token}&updated_at=updated_at&types=anime-serial&with_material_data=true&with_seasons=true&lgbt=false"
+    initial_url = f"{base_url}?token={token}&updated_at=updated_at&types=anime-serial&with_material_data=true&year={year}&with_seasons=true&lgbt=false"
     process_data(initial_url)
 
 

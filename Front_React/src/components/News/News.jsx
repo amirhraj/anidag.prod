@@ -6,6 +6,11 @@ import React from 'react';
 const News = () => {
 
  const newsData = [
+    {
+    title: "Плеер",
+    date: "2026-04-23",
+    content: "Добавлена плеер Аллоха. Подписывайтесь в ТГ",
+  },
   {
     title: "Обнова",
     date: "2026-03-26",

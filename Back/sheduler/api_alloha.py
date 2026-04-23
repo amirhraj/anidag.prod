@@ -63,6 +63,8 @@ app = FastAPI()
 API_URL = f"{os.getenv('AL_URL')}/v2/movies/"
 # LOCAL_API_URL = f"{os.getenv('ANI_URL')}/api/addallohaongoing"
 LOCAL_API_URL = "http://backend:8001/api/addallohaongoing"
+#  curl -X POST https://anidag.ru/api/match-alloha-anime  запрос чтобы смерджить две бд
+
 
 HEADERS = {
     "Authorization": f"Bearer {os.getenv('AL_TOKEN')}",
@@ -75,21 +77,7 @@ PAYLOAD = {
     "year": [2026, 2025]
 }
 
-# Путь, куда будет сохраняться JSON
-# JSON_FILE_PATH = Path("alloha_ongoing_movies.json")
 
-
-# def save_to_json(data: list, file_path: Path = JSON_FILE_PATH) -> None:
-#     """
-#     Сохраняет данные в читаемый JSON-файл.
-#     Если папок в пути нет — создаёт их.
-#     """
-#     file_path.parent.mkdir(parents=True, exist_ok=True)
-
-#     with file_path.open("w", encoding="utf-8") as f:
-#         json.dump(data, f, ensure_ascii=False, indent=4)
-
-#     print(f"Данные сохранены в файл: {file_path.resolve()}")
 
 
 async def fetch_movies():
@@ -120,11 +108,6 @@ async def fetch_movies():
 async def send_to_api():
     movies = await fetch_movies()
 
-    # Если нужно сохранять в JSON — оставь эту строку
-    # save_to_json(movies)
-
-    # Если не нужно сохранять — просто закомментируй строку выше:
-    # save_to_json(movies)
 
     async with httpx.AsyncClient(timeout=120.0) as client:
         response = await client.post(
