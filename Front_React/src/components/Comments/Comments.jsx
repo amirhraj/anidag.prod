@@ -13,6 +13,17 @@ const Comments = ({ card }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [replyTo, setReplyTo] = useState(null); // объект родителя
   const API_URL = import.meta.env.VITE_PROD_API_URL;
+  const [authWarning, setAuthWarning] = useState(false);
+
+  const showAuthWarning = () => {
+    if (user) return;
+
+    setAuthWarning(true);
+
+    setTimeout(() => {
+      setAuthWarning(false);
+    }, 3000);
+  };
 
   // Проверка пользователя
   useEffect(() => {
@@ -116,6 +127,11 @@ const handleReplyClick = (commentId, comment) => {
   return (
     <div className={styles.comments_component}>
       <h3>Комментарии</h3>
+        {authWarning && (
+          <div className={styles.auth_warning}>
+            Чтобы оставить комментарий, войдите в аккаунт
+          </div>
+        )}
 
       {/* Форма для добавления комментария */}
       <div className={styles.comments_input_component}>
@@ -130,14 +146,22 @@ const handleReplyClick = (commentId, comment) => {
             <button onClick={() => setReplyTo(null)}>×</button>
           </div>
         )}
-        <textarea
-          className={styles.comments_input}
-          placeholder={user ? "Ваш комментарий..." : "Вы не авторизованы"}
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          maxLength={1500}
-          disabled={!user}
-        />
+          <textarea
+            className={styles.comments_input}
+            placeholder={user ? "Ваш комментарий..." : "Вы не авторизованы"}
+            value={newComment}
+            onChange={(e) => {
+              if (!user) {
+                showAuthWarning();
+                return;
+              }
+              setNewComment(e.target.value);
+            }}
+            onFocus={() => {
+              if (!user) showAuthWarning();
+            }}
+            maxLength={1500}
+          />
         <div className={styles.controls}>
           <button
             type="button"
@@ -148,8 +172,13 @@ const handleReplyClick = (commentId, comment) => {
           </button>
           <button
             className={styles.comments_btn}
-            onClick={handleAddComment}
-            disabled={!user}
+            onClick={() => {
+              if (!user) {
+                showAuthWarning();
+                return;
+              }
+              handleAddComment();
+            }}
           >
             {replyTo ? "Ответить" : "Добавить"}
           </button>
@@ -223,7 +252,7 @@ const handleReplyClick = (commentId, comment) => {
                   </button>
 
 
-              {user.login === comment.username && (
+              {user?.login === comment.username && (
                 <div className={styles.options}>
                   <button
                     onClick={() =>

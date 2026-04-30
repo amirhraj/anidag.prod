@@ -89,6 +89,18 @@ export default function Register() {
     <div className={styleRegistre.middle_content}>
             <form className={styleRegistre.form} onSubmit={handleSubmit}>
             <h1>Регистрация нового пользователя</h1>
+                      <div className={styleRegistre.register_benefits}>
+            <p className={styleRegistre.benefits_title}>
+              Создайте аккаунт и получите доступ к дополнительным возможностям:
+            </p>
+
+            <ul className="benefits-list">
+              <li>⭐ Сохраняйте историю просмотров</li>
+              <li>💬 Оставляйте комментарии и участвуйте в обсуждениях</li>
+              <li>❤️ Добавляйте аниме в избранное</li>
+              <li>🎨 Настраивайте профиль под себя</li>
+            </ul>
+          </div>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <div className={styleRegistre.conteiner_input_login}>
                 <label className={styleRegistre.label}>Логин:</label>

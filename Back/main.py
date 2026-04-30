@@ -548,22 +548,49 @@ def read_animes(id: str , db: Session = Depends(get_db)):
     }
 
 
+# @app.get("/api/animeGenres/{id}")
+# def read_animes(id: str, db: Session = Depends(get_db)):
+#     # animes = db.query(AnimeOvaBase).distinct(AnimeOvaBase.title).order_by(AnimeOvaBase.updated_at.desc()).all()
+#     animes = (
+#         db.query(AnimeSchemaBase)
+#     )
+    
+#     unique_animes = {} 
+#     for anime in animes:
+#         genres = anime.material_data.get('all_genres', [])
+#         if id in genres:
+#             if anime.title not in unique_animes:
+#                 unique_animes[anime.title] = anime
+
+#     # Получаем список уникальных аниме
+#     return list(unique_animes.values())
+
 @app.get("/api/animeGenres/{id}")
-def read_animes(id: str, db: Session = Depends(get_db)):
-    # animes = db.query(AnimeOvaBase).distinct(AnimeOvaBase.title).order_by(AnimeOvaBase.updated_at.desc()).all()
+def read_animes(
+    id: str,
+    skip: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1),
+    db: Session = Depends(get_db)
+):
     animes = (
         db.query(AnimeSchemaBase)
+        .order_by(AnimeSchemaBase.updated_at.desc())
+        .all()
     )
-    
-    unique_animes = {} 
+
+    unique_animes = {}
+
     for anime in animes:
-        genres = anime.material_data.get('all_genres', [])
+        genres = anime.material_data.get("all_genres", [])
+
         if id in genres:
             if anime.title not in unique_animes:
                 unique_animes[anime.title] = anime
 
-    # Получаем список уникальных аниме
-    return list(unique_animes.values())
+    result = list(unique_animes.values())
+
+    # ✅ Пагинация ПОСЛЕ фильтрации и уникальности
+    return result[skip:skip + limit]
 
     
 @app.get("/api/animesAnons")

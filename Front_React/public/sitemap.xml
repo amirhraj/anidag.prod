@@ -3,39 +3,39 @@
   
   <url>
     <loc>https://www.anidag.ru/</loc>
-    <lastmod>2026-03-27</lastmod>
+   <lastmod>2026-04-23</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.anidag.ru/category/movie</loc>
-    <lastmod>2026-03-26</lastmod>
+   <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
 
 
   <url>
     <loc>https://www.anidag.ru/category/movie</loc>
-    <lastmod>2026-03-26</lastmod>
+   <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.anidag.ru/category/tv</loc>
-    <lastmod>2026-03-26</lastmod>
+   <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
 
 
   <url>
     <loc>https://www.anidag.ru/category/ova</loc>
-    <lastmod>2026-03-26</lastmod>
+   <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
   
   <url>
    <loc>https://www.anidag.ru/category/top</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
 
@@ -44,9 +44,44 @@
 
   <url>
     <loc>https://www.anidag.ru/category/ongoing</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <priority>0.8</priority>
   </url>
 
 
+ 
+<url>
+  <loc>https://www.anidag.ru/anime/tongari-boushi-no-atelier-serial-74116/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+  <loc>https://www.anidag.ru/anime/nippon-sangoku-serial-74079/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+  <loc>https://www.anidag.ru/anime/ponkotsu-fuuki-iin-to-skirt-take-ga-futekisetsu-na-jk-no-hanashi-serial-74220/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+  <loc>https://www.anidag.ru/anime/isekai-nonbiri-nouka-2-serial-74127/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+  <loc>https://www.anidag.ru/anime/higeki-no-genkyou-to-naru-saikyou-gedou-last-boss-joou-wa-tami-no-tame-ni-tsukushimasu-season-2-serial-74175/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
+
+
+<url>
+  <loc>https://www.anidag.ru/anime/marriage-toxin-serial-74161/animeongoing</loc>
+  <priority>0.8</priority>
+</url>
 </urlset>

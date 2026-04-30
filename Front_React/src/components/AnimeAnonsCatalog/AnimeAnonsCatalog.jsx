@@ -27,7 +27,7 @@ export default function AnimeListPage() {
   const [isExpanded, setIsExpanded] = useState({});
   const loaderRef = useRef(null);
 
-    useEffect(() => {
+ useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       if (entries[0].isIntersecting && !buttonLoading) {
@@ -72,10 +72,14 @@ export default function AnimeListPage() {
         }
 
             
-      if (type === 'genre'){
-        const res = await $api.get(`${endpoint}/${value}`);
-        setSeries(res.data);
-     
+      if (type === 'genre') {
+        const res = await $api.get(
+          `${endpoint}/${encodeURIComponent(value)}?skip=${currentSkip}&limit=${limit}`
+        );
+
+        setSeries((prev) => [...prev, ...res.data]);
+        setSkip((prev) => prev + limit);
+        return
       }
   
       const res = await $api.get(`${endpoint}?skip=${currentSkip}&limit=${limit}`);
